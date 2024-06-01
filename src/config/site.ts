@@ -11,9 +11,9 @@ const links = {
 }
 
 export const siteConfig = {
-  name: "Skateshop",
+  name: "Jerseyshop",
   description:
-    "An open source e-commerce skateshop build with everything new in Next.js.",
+    "Lo mejor de las camisetas de futbol, gorras y mas en un solo lugar",
   url: "https://skateshop.sadmn.com",
   ogImage: "https://skateshop.sadmn.com/opengraph-image.png",
   links,
@@ -22,15 +22,15 @@ export const siteConfig = {
       title: "Lobby",
       items: [
         {
-          title: "Products",
+          title: "Productos",
           href: "/products",
-          description: "All the products we have to offer.",
+          description: "Explora nuestra colección de productos.",
           items: [],
         },
         {
-          title: "Blog",
+          title: "Nuestro Blog",
           href: "/blog",
-          description: "Read our latest blog posts.",
+          description: "Lee nuestras últimas noticias y novedades.",
           items: [],
         },
       ],
@@ -39,9 +39,9 @@ export const siteConfig = {
       title: category.name,
       items: [
         {
-          title: "All",
+          title: "Todos los productos",
           href: `/categories/${slugify(category.name)}`,
-          description: `All ${category.name}.`,
+          description: `Nuestra coleccion completa de ${category.name}.`,
           items: [],
         },
         ...category.subcategories.map((subcategory) => ({
@@ -54,21 +54,6 @@ export const siteConfig = {
     })),
   ] satisfies MainNavItem[],
   footerNav: [
-    {
-      title: "Credits",
-      items: [
-        {
-          title: "Taxonomy",
-          href: "https://tx.shadcn.com/",
-          external: true,
-        },
-        {
-          title: "shadcn/ui",
-          href: "https://ui.shadcn.com",
-          external: true,
-        },
-      ],
-    },
     {
       title: "Help",
       items: [
@@ -85,11 +70,6 @@ export const siteConfig = {
         {
           title: "Terms",
           href: "/terms",
-          external: false,
-        },
-        {
-          title: "Privacy",
-          href: "/privacy",
           external: false,
         },
       ],

@@ -28,7 +28,6 @@ export function MainNav({ items }: MainNavProps) {
         <span className="hidden font-bold lg:inline-block">
           {siteConfig.name}
         </span>
-        <span className="sr-only">Home</span>
       </Link>
       <NavigationMenu>
         <NavigationMenuList>
@@ -43,7 +42,7 @@ export function MainNav({ items }: MainNavProps) {
                     <NavigationMenuLink asChild>
                       <Link
                         href="/"
-                        className="flex size-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                        className="flex size-full flex-col justify-end rounded-md bg-blue-200 p-6 focus:shadow-md"
                       >
                         <Aperture className="size-6" aria-hidden="true" />
                         <div className="mb-2 mt-4 text-lg font-medium">
