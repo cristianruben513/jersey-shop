@@ -43,7 +43,7 @@ export function CategoryCard({ category }: CategoryCardProps) {
             {category.description}
           </CardDescription>
         </CardHeader>
-        <CardContent className="pt-2">
+        <CardContent className="mx-auto">
           <React.Suspense fallback={<Skeleton className="h-4 w-20" />}>
             <ProductCount quantity={30} />
           </React.Suspense>

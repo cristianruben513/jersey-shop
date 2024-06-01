@@ -19,7 +19,7 @@ export const categories = [
   },
   {
     name: "Formula 1",
-    description: "Sumergete en el mundo de la Formula 1 con nuestros productos.",
+    description: "Sumergete en el mundo de la F1 con nuestros productos.",
     slug: "category-4",
     image: "https://images.unsplash.com/photo-1631392426516-affff6b1d41c?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
