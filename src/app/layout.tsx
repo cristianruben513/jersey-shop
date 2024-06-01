@@ -1,5 +1,6 @@
+import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
-import { GeistSans } from "geist/font/sans";
+import { Onest } from "next/font/google";
 
 export const metadata = {
   title: "Create T3 App",
@@ -7,14 +8,28 @@ export const metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
+const fontSans = Onest({
+  variable: "--font-sans",
+})
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${GeistSans.variable}`}>
-      <body>{children}</body>
+    <html 
+      lang="en" 
+      suppressHydrationWarning
+    >
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable
+        )}
+      >
+        {children}
+      </body>
     </html>
   );
 }
