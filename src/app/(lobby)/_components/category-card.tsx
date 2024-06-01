@@ -6,30 +6,29 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Skeleton } from "@/components/ui/skeleton"
+import { Category } from "@/types/categories"
 import { BoxIcon } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import * as React from "react"
 
-interface CategoryCardProps {
-  category: {
-    name: string
-    description: string
-    slug: string
-    image: string
-  }
-}
-
-export function CategoryCard({ category }: CategoryCardProps) {
+export function CategoryCard({ 
+  id,
+  name,
+  description,
+  slug,
+  image,
+  status,
+}: Category) {
   return (
     <Link
       className="relative rounded-lg overflow-hidden group"
-      href={`/collections/${category.slug}`}
+      href={`/collections/${slug}`}
     >
       <Image
         className="absolute inset-0 w-full h-full object-cover z-0 group-hover:scale-110 transition-transform duration-300 ease-in-out"
-        src={category.image}
-        alt={category.name}
+        src={image}
+        alt={name}
         fill
       />
       <div className="absolute inset-0 bg-black/60" />
@@ -37,10 +36,10 @@ export function CategoryCard({ category }: CategoryCardProps) {
       <Card className="h-full transition-colors relative bg-transparent justify-between flex flex-col">
         <CardHeader className="flex-1 z-10">
           <CardTitle className="capitalize mb-1 text-white">
-            {category.name}
+            {name}
           </CardTitle>
           <CardDescription className="line-clamp-3 text-balance text-neutral-200 ">
-            {category.description}
+            {description}
           </CardDescription>
         </CardHeader>
         <CardContent className="mx-auto">

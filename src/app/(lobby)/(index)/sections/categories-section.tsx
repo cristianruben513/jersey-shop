@@ -8,7 +8,10 @@ export default function CategoriesSection() {
       style={{ animationDelay: "0.50s", animationFillMode: "both" }}
     >
       {categories.map((category) => (
-        <CategoryCard key={category.name} category={category} />
+        <CategoryCard 
+          key={category.name} 
+          {...category}
+        />
       ))}
     </section>
   )

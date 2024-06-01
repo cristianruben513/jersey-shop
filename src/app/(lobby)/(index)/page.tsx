@@ -1,6 +1,7 @@
 import { Shell } from "@/components/shell";
 import CategoriesSection from "./sections/categories-section";
 import HeaderSection from "./sections/header-section";
+import ProductsSections from "./sections/products-section";
 
 export default function HomePage() {
   return (
@@ -8,6 +9,7 @@ export default function HomePage() {
       <main>
         <HeaderSection />
         <CategoriesSection />
+        <ProductsSections />
       </main>
     </Shell>
   );
