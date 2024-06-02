@@ -8,7 +8,7 @@ export default function ProductsSections() {
     <ContentSection
       title="Productos destacados"
       href="/products"
-      linkText="View all products"
+      linkText="Ver todos los productos"
       className="pt-14 md:pt-20 lg:pt-24"
     >
       {products.map((product: Product) => (
