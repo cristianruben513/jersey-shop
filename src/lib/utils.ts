@@ -19,3 +19,9 @@ export function toTitleCase(str: string) {
     (txt) => txt.charAt(0).toUpperCase() + txt.slice(1).toLowerCase()
   )
 }
+
+export function isMacOs() {
+  if (typeof window === "undefined") return false
+
+  return window.navigator.userAgent.includes("Mac")
+}

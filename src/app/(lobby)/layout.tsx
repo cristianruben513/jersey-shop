@@ -1,10 +1,13 @@
+import { getCurrentUser } from "@/actions/getCurrentUser";
 import Footer from "@/components/layouts/footer";
 import Header from "@/components/layouts/header";
 
-export default function LobbyLayout({ children }: { children: React.ReactNode }) {
+export default async function LobbyLayout({ children }: { children: React.ReactNode }) {
+  const user = await getCurrentUser();
+
   return (
     <div className="relative flex min-h-screen flex-col">
-      <Header />
+      <Header user={user} />
       <main className="flex-1">
         {children}
       </main>
