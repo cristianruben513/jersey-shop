@@ -43,7 +43,7 @@ export function ProductCard({
       className={cn("size-full  rounded-lg group", className)}
       {...props}
     >
-      <Link aria-label={product.name} href={`/products/${product.id}`}>
+      <Link aria-label={product.name} href={`/product/${product.id}`}>
         <CardHeader className="border-b p-0">
           <AspectRatio ratio={1 / 1}>
             {product.images?.length ? (
@@ -64,7 +64,7 @@ export function ProductCard({
         </CardHeader>
         <span className="sr-only">{product.name}</span>
       </Link>
-      <Link href={`/products/${product.id}`} tabIndex={-1}>
+      <Link href={`/product/${product.id}`} tabIndex={-1}>
         <CardContent className="space-y-1.5 p-4">
           <CardTitle className="line-clamp-1 text-lg">
             {product.name}

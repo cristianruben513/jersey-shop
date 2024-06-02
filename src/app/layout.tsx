@@ -1,9 +1,8 @@
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/theme-provider";
-import { Onest } from "next/font/google";
-import localFont from "next/font/local";
-import { Viewport, Metadata } from "next";
 import { ToasterComponent } from "@/providers/toaster";
+import { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
 
 import "@/styles/globals.css";
 
@@ -29,15 +28,14 @@ const geistMonoVariable = localFont({
   preload: true,
 });
 
-const fontSans = Onest({
-  variable: "--font-sans",
-  subsets: ["latin"],
-})
-
 // Viewport:
 export const viewport: Viewport = {
-  themeColor: "#171717",
-};
+  colorScheme: "dark light",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+}
 
 
 export default function RootLayout({
