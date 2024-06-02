@@ -1,18 +1,14 @@
 import {
   Card,
-  CardContent,
   CardDescription,
   CardHeader,
-  CardTitle,
+  CardTitle
 } from "@/components/ui/card"
-import { Skeleton } from "@/components/ui/skeleton"
 import { Category } from "@/types/categories"
-import { BoxIcon } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import * as React from "react"
 
-export function CategoryCard({ 
+export function CategoryCard({
   id,
   name,
   description,
@@ -33,33 +29,16 @@ export function CategoryCard({
       />
       <div className="absolute inset-0 bg-black/60" />
 
-      <Card className="h-full transition-colors relative bg-transparent justify-between flex flex-col">
+      <Card className="h-full transition-colors relative bg-transparent justify-between flex flex-col md:py-5 aspect-square md:aspect-auto">
         <CardHeader className="flex-1 z-10">
-          <CardTitle className="capitalize mb-1 text-white">
+          <CardTitle className="capitalize mb-1 text-white leading-7 text-center md:text-start my-auto">
             {name}
           </CardTitle>
-          <CardDescription className="line-clamp-3 text-balance text-neutral-200 ">
+          <CardDescription className="line-clamp-3 text-balance text-neutral-200 hidden md:block ">
             {description}
           </CardDescription>
         </CardHeader>
-        <CardContent className="mx-auto">
-          <React.Suspense fallback={<Skeleton className="h-4 w-20" />}>
-            <ProductCount quantity={30} />
-          </React.Suspense>
-        </CardContent>
       </Card>
     </Link>
-  )
-}
-
-async function ProductCount({ quantity }: { quantity: number }) {
-  return (
-    <div className="flex w-fit items-center text-[0.8rem] text-muted-foreground bg-white/40 backdrop-blur-sm rounded-full px-2 py-1 text-white">
-      <BoxIcon
-        className="mr-1.5 size-3.5"
-        aria-hidden="true"
-      />
-      {quantity} productos
-    </div>
   )
 }

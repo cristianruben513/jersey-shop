@@ -40,10 +40,10 @@ export function ProductCard({
 
   return (
     <Card
-      className={cn("size-full overflow-hidden rounded-lg", className)}
+      className={cn("size-full  rounded-lg group", className)}
       {...props}
     >
-      <Link aria-label={product.name} href={`/product/${product.id}`}>
+      <Link aria-label={product.name} href={`/products/${product.id}`}>
         <CardHeader className="border-b p-0">
           <AspectRatio ratio={1 / 1}>
             {product.images?.length ? (
@@ -52,7 +52,7 @@ export function ProductCard({
                   product.images[0]?.url ?? "/images/product-placeholder.webp"
                 }
                 alt={product.images[0]?.name ?? product.name}
-                className="object-cover"
+                className="object-cover group-hover:bg-muted transition-colors duration-300"
                 sizes="(min-width: 1024px) 20vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, (min-width: 475px) 50vw, 100vw"
                 fill
                 loading="lazy"
@@ -64,7 +64,7 @@ export function ProductCard({
         </CardHeader>
         <span className="sr-only">{product.name}</span>
       </Link>
-      <Link href={`/product/${product.id}`} tabIndex={-1}>
+      <Link href={`/products/${product.id}`} tabIndex={-1}>
         <CardContent className="space-y-1.5 p-4">
           <CardTitle className="line-clamp-1 text-lg">
             {product.name}

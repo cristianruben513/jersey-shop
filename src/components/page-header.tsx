@@ -58,7 +58,7 @@ function PageHeaderHeading({
   ...props
 }: PageHeaderHeadingProps) {
   return (
-    <Comp className={cn(headingVariants({ size, className }))} {...props} />
+    <Comp className={cn(headingVariants({ size, className }), "text-balance")} {...props} />
   )
 }
 
