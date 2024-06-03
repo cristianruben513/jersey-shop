@@ -1,6 +1,6 @@
 "use client"
 
-import { StoredFile } from "@/types/storedFile"
+import { type StoredFile } from "@/types/storedFile"
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons"
 import useEmblaCarousel, {
   type UseEmblaCarouselType,

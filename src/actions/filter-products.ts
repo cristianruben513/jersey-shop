@@ -1,4 +1,3 @@
-import { db } from "@/server/db"
 
 export async function filterProducts({ query }: { query: string }) {
   try {

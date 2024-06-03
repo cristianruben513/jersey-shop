@@ -1,7 +1,7 @@
 import { MainNav } from "@/components/layouts/main-nav"
 import { MobileNav } from "@/components/layouts/mobile-nav"
 import { siteConfig } from "@/config/site"
-import { SafeUser } from "@/types/user"
+import { type SafeUser } from "@/types/user"
 import { CartSheet } from "@/components/checkout/cart-sheet"
 import { AuthDropdown } from "@/components/layouts/auth-dropdown"
 import { ProductsCombobox } from "@/components/products-combobox"

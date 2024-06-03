@@ -1,5 +1,4 @@
 import { env } from "@/env.js"
-import type { SearchParams } from "@/types/searchParams"
 import type { Metadata } from "next"
 
 import { AlertCard } from "@/components/alert-card"
@@ -11,7 +10,7 @@ import {
 import { ProductCard } from "@/components/product-card"
 import { Shell } from "@/components/shell"
 import { toTitleCase } from "@/lib/utils"
-import { Product } from "@/types/product"
+import type { Product } from "@/types/product"
 import { categories } from "../../_data/categories"
 import { products } from "../../_data/products"
 
@@ -19,7 +18,6 @@ interface CategoryPageProps {
   params: {
     category: string
   }
-  searchParams: SearchParams
 }
 
 export function generateMetadata({ params }: CategoryPageProps): Metadata {
@@ -32,7 +30,6 @@ export function generateMetadata({ params }: CategoryPageProps): Metadata {
 
 export default async function CategoryPage({
   params,
-  searchParams,
 }: CategoryPageProps) {
   const categoryData = categories.find(
     (category) => category.slug === params.category

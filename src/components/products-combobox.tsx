@@ -114,7 +114,7 @@ export function ProductsCombobox() {
               <Skeleton className="h-8 rounded-sm" />
             </div>
           ) : (
-            data?.map((group) => (
+            data?.map((group: any) => (
               <CommandGroup
                 key={group.name}
                 className="capitalize"

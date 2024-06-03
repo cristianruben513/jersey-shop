@@ -2,7 +2,6 @@ import { getCurrentUser } from "@/actions/getCurrentUser";
 import Footer from "@/components/layouts/footer";
 import Header from "@/components/layouts/header";
 
-
 interface LobyLayoutProps extends React.PropsWithChildren<{
   modal: React.ReactNode
 }> { }

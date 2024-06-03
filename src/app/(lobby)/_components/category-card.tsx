@@ -4,17 +4,15 @@ import {
   CardHeader,
   CardTitle
 } from "@/components/ui/card"
-import { Category } from "@/types/categories"
+import { type Category } from "@/types/categories"
 import Image from "next/image"
 import Link from "next/link"
 
 export function CategoryCard({
-  id,
   name,
   description,
   slug,
   image,
-  status,
 }: Category) {
   return (
     <Link

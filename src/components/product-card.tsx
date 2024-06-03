@@ -6,7 +6,6 @@ import Image from "next/image"
 import Link from "next/link"
 import * as React from "react"
 
-import { PlaceholderImage } from "./placeholder-image"
 import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { Button, buttonVariants } from "@/components/ui/button"
 import {
@@ -19,25 +18,21 @@ import {
 } from "@/components/ui/card"
 import { formatPrice } from "@/lib/formatPrice"
 import { cn } from "@/lib/utils"
-import { LoaderCircle } from "lucide-react"
+import { PlaceholderImage } from "./placeholder-image"
 
 interface ProductCardProps extends React.HTMLAttributes<HTMLDivElement> {
   product: Product
   variant?: "default" | "switchable"
   isAddedToCart?: boolean
-  onSwitch?: () => Promise<void>
 }
 
 export function ProductCard({
   product,
   variant = "default",
   isAddedToCart = false,
-  onSwitch,
   className,
   ...props
 }: ProductCardProps) {
-  const [isUpdatePending, startUpdateTransition] = React.useTransition()
-
   return (
     <Card
       className={cn("size-full  rounded-lg group", className)}
@@ -82,14 +77,7 @@ export function ProductCard({
               size="sm"
               className="h-8 w-full rounded-sm"
               onClick={() => console.log("Add to cart")}
-              disabled={isUpdatePending}
             >
-              {isUpdatePending && (
-                <LoaderCircle
-                  className="mr-2 size-4 animate-spin"
-                  aria-hidden="true"
-                />
-              )}
               Agregar al carrito
             </Button>
             <Link
@@ -112,18 +100,9 @@ export function ProductCard({
             aria-label={isAddedToCart ? "Remove from cart" : "Add to cart"}
             size="sm"
             className="h-8 w-full rounded-sm"
-            onClick={async () => {
-              startUpdateTransition(async () => { })
-              await onSwitch?.()
-            }}
-            disabled={isUpdatePending}
+            onClick={() => console.log("Add to cart")}
           >
-            {isUpdatePending ? (
-              <LoaderCircle
-                className="mr-2 size-4 animate-spin"
-                aria-hidden="true"
-              />
-            ) : isAddedToCart ? (
+            {isAddedToCart ? (
               <CheckIcon className="mr-2 size-4" aria-hidden="true" />
             ) : (
               <PlusIcon className="mr-2 size-4" aria-hidden="true" />

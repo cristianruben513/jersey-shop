@@ -1,7 +1,7 @@
 import { ContentSection } from "@/components/content-section"
 import { ProductCard } from "@/components/product-card"
 import { products } from "../../_data/products"
-import { Product } from "@/types/product"
+import { type Product } from "@/types/product"
 
 export default function ProductsSections() {
   return (

@@ -15,7 +15,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { cn } from "@/lib/utils"
-import { SafeUser } from "@/types/user"
+import { type SafeUser } from "@/types/user"
 import { CreditCard } from "lucide-react"
 
 interface AuthDropdownProps extends React.ComponentPropsWithRef<typeof DropdownMenuTrigger>,

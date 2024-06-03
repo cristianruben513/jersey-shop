@@ -18,7 +18,7 @@ import { Separator } from "@/components/ui/separator"
 import { formatPrice } from "@/lib/formatPrice"
 import { toTitleCase } from "@/lib/utils"
 
-import { Product } from "@/types/product"
+import { type Product } from "@/types/product"
 import { AddToCartForm } from "./_components/add-to-cart-form"
 
 interface ProductPageProps {

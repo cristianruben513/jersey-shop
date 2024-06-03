@@ -12,7 +12,6 @@ interface UpdateCartProps {
 
 export function UpdateCart({ cartLineItem }: UpdateCartProps) {
   const id = React.useId()
-  const [isPending, startTransition] = React.useTransition()
 
   return (
     <div className="flex w-full items-center justify-between space-x-2 xs:w-auto xs:justify-normal">
@@ -27,7 +26,6 @@ export function UpdateCart({ cartLineItem }: UpdateCartProps) {
             // @params: productId, quantity
             console.log("Disminuir la cantidad de un producto en el carrito en 1")
           }}
-          disabled={isPending}
         >
           <MinusIcon className="size-3" aria-hidden="true" />
           <span className="sr-only">Remove one item</span>
@@ -43,7 +41,6 @@ export function UpdateCart({ cartLineItem }: UpdateCartProps) {
             // @params: productId, quantity
             console.log("Actualizar la cantidad de un producto en el carrito")
           }}
-          disabled={isPending}
         />
         <Button
           id={`${id}-increment`}
@@ -55,7 +52,6 @@ export function UpdateCart({ cartLineItem }: UpdateCartProps) {
             // @params: productId, quantity
             console.log("Aumentar la cantidad de un producto en el carrito en 1")
           }}
-          disabled={isPending}
         >
           <PlusIcon className="size-3" aria-hidden="true" />
           <span className="sr-only">Add one item</span>
@@ -71,7 +67,6 @@ export function UpdateCart({ cartLineItem }: UpdateCartProps) {
           // @params: productId
           console.log("Eliminar un producto del carrito")
         }}
-        disabled={isPending}
       >
         <TrashIcon className="size-3" aria-hidden="true" />
         <span className="sr-only">Delete item</span>

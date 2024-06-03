@@ -5,11 +5,10 @@ import {
 } from "@/components/page-header"
 import { Shell } from "@/components/shell"
 import { env } from "@/env.js"
-import { type SearchParams } from "@/types/searchParams"
 import { type Metadata } from "next"
 
 import { ProductCard } from "@/components/product-card"
-import { Product } from "@/types/product"
+import { type Product } from "@/types/product"
 import { products } from "../_data/products"
 
 export const metadata: Metadata = {
@@ -18,13 +17,7 @@ export const metadata: Metadata = {
   description: "Buy products from our stores",
 }
 
-interface ProductsPageProps {
-  searchParams: SearchParams
-}
-
-export default async function ProductsPage({
-  searchParams,
-}: ProductsPageProps) {
+export default async function ProductsPage() {
   //const productsTransaction = await getProducts(searchParams)
 
   return (

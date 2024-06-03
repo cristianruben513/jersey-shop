@@ -29,10 +29,9 @@ interface AddToCartFormProps {
 
 type Inputs = z.infer<typeof updateCartItemSchema>
 
-export function AddToCartForm({ productId, showBuyNow }: AddToCartFormProps) {
+export function AddToCartForm({ showBuyNow }: AddToCartFormProps) {
   const id = React.useId()
   const router = useRouter()
-  const [isAddingToCart, setIsAddingToCart] = React.useState(false)
   const [isBuyingNow, setIsBuyingNow] = React.useState(false)
 
   // react-hook-form
@@ -43,7 +42,7 @@ export function AddToCartForm({ productId, showBuyNow }: AddToCartFormProps) {
     },
   })
 
-  async function onSubmit(data: Inputs) {
+  async function onSubmit() {
     toast.success("Product added to cart")
   }
 
@@ -69,7 +68,6 @@ export function AddToCartForm({ productId, showBuyNow }: AddToCartFormProps) {
                 Math.max(0, form.getValues("quantity") - 1)
               )
             }
-            disabled={isAddingToCart}
           >
             <MinusIcon className="size-3" aria-hidden="true" />
             <span className="sr-only">Remove one item</span>
@@ -108,7 +106,6 @@ export function AddToCartForm({ productId, showBuyNow }: AddToCartFormProps) {
             onClick={() =>
               form.setValue("quantity", form.getValues("quantity") + 1)
             }
-            disabled={isAddingToCart}
           >
             <PlusIcon className="size-3" aria-hidden="true" />
             <span className="sr-only">Add one item</span>
@@ -143,14 +140,7 @@ export function AddToCartForm({ productId, showBuyNow }: AddToCartFormProps) {
             variant={showBuyNow ? "outline" : "default"}
             size="sm"
             className="w-full"
-            disabled={isAddingToCart}
           >
-            {isAddingToCart && (
-              <LoaderIcon
-                className="mr-2 size-4 animate-spin"
-                aria-hidden="true"
-              />
-            )}
             Agregar al carrito
           </Button>
         </div>

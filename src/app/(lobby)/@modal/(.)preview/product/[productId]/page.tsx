@@ -12,7 +12,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { buttonVariants } from "@/components/ui/button"
 import { formatPrice } from "@/lib/formatPrice"
 import { cn } from "@/lib/utils"
-import { Product } from "@/types/product"
+import { type Product } from "@/types/product"
 
 interface ProductModalPageProps {
   params: {

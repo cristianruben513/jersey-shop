@@ -3,7 +3,7 @@
 import * as React from "react"
 
 import { Button } from "@/components/ui/button"
-import { SafeUser } from "@/types/user"
+import { type SafeUser } from "@/types/user"
 import { LoaderIcon } from "lucide-react"
 import { signIn } from "next-auth/react"
 import { useRouter } from "next/navigation"
@@ -14,7 +14,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   user: SafeUser | null
 }
 
-export function OAuthForm({ user, className, ...props }: Props) {
+export function OAuthForm({ user }: Props) {
   const [googleLoading, setGoogleLoading] = React.useState(false)
   const [discordLoading, setDiscordLoading] = React.useState(false)
 
@@ -40,9 +40,9 @@ export function OAuthForm({ user, className, ...props }: Props) {
         variant="outline"
         type="button"
         disabled={googleLoading}
-        onClick={() => {
+        onClick={async () => {
           setGoogleLoading(true)
-          signIn("google")
+          await signIn("google")
         }}
       >
         {googleLoading ? (
@@ -57,9 +57,9 @@ export function OAuthForm({ user, className, ...props }: Props) {
         variant="outline"
         type="button"
         disabled={discordLoading}
-        onClick={() => {
+        onClick={async () => {
           setDiscordLoading(true)
-          signIn("discord")
+          await signIn("discord")
         }}
       >
         {discordLoading ? (

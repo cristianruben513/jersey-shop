@@ -1,5 +1,5 @@
 import { type StoredFile } from "./storedFile";
-import { LifecycleDates } from "./lifecycleDates";
+import { type LifecycleDates } from "./lifecycleDates";
 
 export type Product = {
   id: string;
