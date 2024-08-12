@@ -3,7 +3,6 @@ import Link from "next/link"
 import React from "react"
 
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 
 interface AlertCardProps extends React.ComponentPropsWithoutRef<typeof Alert> {
@@ -44,7 +43,7 @@ export function AlertCard({
             <div className="flex items-center space-x-2 text-sm text-muted-foreground">
               <AlertDescription>Follow along on</AlertDescription>
               <Link
-                href={siteConfig.links.x}
+                href='#'
                 className="transition-colors hover:text-foreground"
               >
                 X
